@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Home from './Pages/home'
+
 import { Route, Routes } from 'react-router-dom'
 import About from './Pages/About'
 import Academics from './Pages/Academics'
@@ -19,6 +19,8 @@ import Alumni from './Pages/Alumni'
 import Blogs from './Pages/Blogs'
 import Careers from './Pages/Careers'
 import Terms from './Pages/Privacy_policy'   
+import Signup from './Pages/Signup'
+import Home from './Pages/Home'
 
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
   
   
     <Routes>
+      <Route path='/signup' element={<Signup/>}/>
       <Route path='/home' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/academics' element={<Academics/>}/>

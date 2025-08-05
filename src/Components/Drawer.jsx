@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-const drawer = (props) => {
+const Drawer = (props) => {
 
 
    
    
   return (
-    <div id='drawer' className={`${props.isDrawerOpen ?'-translate-x-full' : 'translate-x-0'} h-full w-1/3 relative top-0 left-0  bg-amber-800`}>
-      <div className='w-full h-1/5 flex flex-col justify-end pb-5 pl-5'>
+    <div id='drawer' className={`${props.isDrawerOpen ?'left-0' : '-left-1/3'} ${props.isDrawerOpen ?'fixed' : 'absolute'}  h-full w-1/3  z-10   overflow-y-auto    bg-amber-800`}>
+      <div className='w-full h-1/9 flex flex-col justify-end pb-5 pl-5'>
         <h3>School Name</h3>
         <p>info@school.com</p>
       </div>
@@ -35,4 +35,4 @@ const drawer = (props) => {
   )
 }
 
-export default drawer
+export default Drawer
