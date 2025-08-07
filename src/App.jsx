@@ -18,7 +18,7 @@ import Contact from './Pages/Contact'
 import Alumni from './Pages/Alumni'
 import Blogs from './Pages/Blogs'
 import Careers from './Pages/Careers'
-import Terms from './Pages/Privacy_policy'   
+import Terms from './Pages/Privacy_page'   
 import Signup from './Pages/Signup'
 import Home from './Pages/Home'
 
@@ -33,7 +33,7 @@ function App() {
   
     <Routes>
       <Route path='/signup' element={<Signup/>}/>
-      <Route path='/home' element={<Home/>}/>
+      <Route path='/' element={<Home/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/academics' element={<Academics/>}/>
       <Route path='/admissions' element={<Admissions/>}/>
