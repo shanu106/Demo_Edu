@@ -4,21 +4,21 @@ import Footer from '../Components/Footer'
 import QuickLinks from '../Components/QuickLinks'
 import Navbar from '../Components/Navbar'
 import Drawer from '../Components/Drawer'
-const Gallery = () => {
-  const [isDrawerOpen, setDrawerOpen] = useState(false)
+const Gallery = ({isDrawerOpen, setDrawerOpen}) => {
+
 
    const toggleDrawer = () =>{
         setDrawerOpen(!isDrawerOpen)
     }
   return (
     <>
-     <div className=' w-full mt-0  bg-red-300 '>
+     <div className=' w-full mt-0   '>
  <Navbar pageName={"Gallery"} toggleDrawer={toggleDrawer}/>
     </div>
 
- <div className='bg-red-400 w-full h-screen  absolute'>
+ <div className=' w-full h-screen  absolute'>
  <Drawer isDrawerOpen={isDrawerOpen}/>
-      <div className='w-full bg-[#780000] text-[#fdf0d5] h-2/3 md:h-2/3 p-5'>
+     <div className='w-full bg-[#f8f9fa] text-[#fdf0d5] h-2/3 md:h-2/3 p-5'>
 
     
 </div>
@@ -28,10 +28,11 @@ const Gallery = () => {
 
 
 
- <div className='w-full h-1/3 p-4   bg-[#9a2727]'>
-     <h1 className='text-[#fdf0d5] text-3xl font-bold font-serif w-full text-center'>Quick Links</h1>
+ <div className='w-full h-full xl:h-[40%] md:h-[60%] p-5  bg-[#adb5bd]'>
+     
       <QuickLinks />
     </div>
+
 
    
 </div>

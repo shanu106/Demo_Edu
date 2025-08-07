@@ -1,27 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Signup from '../Pages/Signup'
+
 
 const Navbar = (props) => {
 
     
-
+  const [isFormOpen, setFormOpen] = useState(false)
+  const [isListOpen, setListOpen] = useState(false)
     
   return (
-    <div className='w-full bg-[#dee2e6] h-14  z-10  relative flex items-center justify-between px-5'>
+    <div className='w-full bg-[#dee2e6] h-14  z-10   flex   items-center justify-between px-5'>
        <div className='flex items-center w-1/3 h-full '>
 
      
         <button onClick={props.toggleDrawer} id='btnToggleDrawer' className=   {`${props.isDrawerOpen ? 'z-50' : 'z-50'} px-4 py-2  rounded hover:cursor-pointer`}>< i className="text-[#495057] ri-menu-line"></i></button>
-        <h2 className='ml-5 font-bold text-2xl text-[#495057]'>{props.pageName}</h2>
+        <h2 className='ml-5 font-bold text-sm md:text-2xl text-[#495057] font-serif'>little Kingdom</h2>
           </div>
-          <div className=' h-full flex justify-around items-center w-1/3 '>
-             <Link to='/contact'>Contact</Link>
+          <div className=' h-full flex  justify-end gap-4 items-center w-full '>
+    
+            <div className={`grid z-10   ${isListOpen ? 'mt-32' : 'mt-0'}`}>
+              <Link className='md:hidden text-2xl font-semibold' onClick={()=>{
+                setListOpen(!isListOpen)
+              }}><i className=" ri-arrow-down-s-line "></i> More</Link>
+
+              <div className={`${isListOpen ? 'grid' : 'hidden'} md:flex  bg-[#dee2e6] gap-3 p-4 rounded-2xl text-lg`}>
+                 <Link to='/contact'>Contact</Link>
               <Link to='/blogs'>Blogs</Link>
              <Link to='/gallery'>Gallery</Link>
-            <Link className='p-2 rounded-2xl text-sm bg-[#495057] text-[#dee2e6]' to={'/signup'}>SignUp</Link>
+              </div>
+
+            
+            </div>
+         
+             <button onClick={()=>{
+              setFormOpen(!isFormOpen)
+             }} onMouseEnter={()=>{
+              setFormOpen(!isFormOpen)
+             }}
+              className='cursor-pointer p-2 rounded-2xl text-sm bg-[#495057] text-[#dee2e6]'>Signup</button>
+            
           </div>
+          <div className='fixed z-10'>
+  <Signup isFormOpen={isFormOpen}/>
+          </div>
+          
     </div>
+   
   )
 }
 

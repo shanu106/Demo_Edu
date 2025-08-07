@@ -18,7 +18,7 @@ const Alumni = () => {
 
  <div className='bg-red-400 w-full h-screen  absolute'>
  <Drawer isDrawerOpen={isDrawerOpen}/>
-      <div className='w-full bg-[#780000] text-[#fdf0d5] h-2/3 md:h-2/3 p-5'>
+        <div className='w-full bg-[#f8f9fa] text-[#fdf0d5] h-2/3 md:h-2/3 p-5'>
 
     
 </div>
@@ -28,10 +28,11 @@ const Alumni = () => {
 
 
 
- <div className='w-full h-1/3 p-4   bg-[#9a2727]'>
-     <h1 className='text-[#fdf0d5] text-3xl font-bold font-serif w-full text-center'>Quick Links</h1>
+   <div className='w-full h-full xl:h-[40%] md:h-[60%] p-5  bg-[#adb5bd]'>
+     
       <QuickLinks />
     </div>
+
 
    
 </div>
