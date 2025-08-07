@@ -4,7 +4,7 @@ import Footer from '../Components/Footer'
 import QuickLinks from '../Components/QuickLinks'
 import Navbar from '../Components/Navbar'
 import Drawer from '../Components/Drawer'
-const Privacy_policy = () => {
+const Privacy_page = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false)
 
    const toggleDrawer = () =>{
@@ -73,4 +73,4 @@ Veritatis culpa eos, temporibus doloremque ut beatae minus rerum qui necessitati
   )
 }
 
-export default Privacy_policy
+export default Privacy_page
