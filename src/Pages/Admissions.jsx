@@ -4,8 +4,8 @@ import Footer from '../Components/Footer'
 import QuickLinks from '../Components/QuickLinks'
 import Navbar from '../Components/Navbar'
 import Drawer from '../Components/Drawer'
-const Admissions = () => {
-  const [isDrawerOpen, setDrawerOpen] = useState(false)
+const Admissions = ({isDrawerOpen, setDrawerOpen}) => {
+
 
    const toggleDrawer = () =>{
         setDrawerOpen(!isDrawerOpen)
@@ -18,7 +18,7 @@ const Admissions = () => {
 
  <div className=' w-full h-screen  absolute'>
  <Drawer isDrawerOpen={isDrawerOpen}/>
-      <div className='w-full bg-[#caf0f8] text-[#fdf0d5] h-2/3 md:h-2/3 p-5'>
+         <div className='w-full bg-[#f8f9fa] text-[#fdf0d5] h-2/3 md:h-2/3 p-5'>
 
     
 </div>
@@ -28,10 +28,12 @@ const Admissions = () => {
 
 
 
- <div className='w-full h-1/3 p-4   bg-[#ade8f4]'>
-     <h1 className='text-[#03045e] text-3xl font-bold font-serif w-full text-center'>Quick Links</h1>
+ <div className='w-full h-full xl:h-[40%] md:h-[60%] p-5  bg-[#adb5bd]'>
+     
       <QuickLinks />
     </div>
+
+
 
    
 </div>

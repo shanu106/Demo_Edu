@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -25,30 +25,37 @@ import Home from './Pages/Home'
 
 function App() {
 
+
+  const [isDrawerOpen, setDrawerOpen] = useState(false)
   
-  
+  useEffect(() => {
+        
+        document.body.style.overflowY=isDrawerOpen ? 'hidden' : 'auto';
+      
+       
+      })
 
   return (
   
   
     <Routes>
       <Route path='/signup' element={<Signup/>}/>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/about' element={<About/>}/>
-      <Route path='/academics' element={<Academics/>}/>
-      <Route path='/admissions' element={<Admissions/>}/>
-      <Route path='/staff' element={<Staff/>}/>
-      <Route path='/students' element={<Students/>}/>
-      <Route path='/parents' element={<Parents/>}/>
-      <Route path='/news/events' element={<NewsEvents/>}/>
-      <Route path='/gallery' element={<Gallery/>}/>
-      <Route path='/announcements' element={<Announcements/>}/>
-      <Route path='/LMS' element={<LMS/>}/>
-      <Route path='/contact' element={<Contact/>}/> 
-      <Route path='/alumni' element={<Alumni/>}/>
-      <Route path='/blogs' element={<Blogs/>}/>
-      <Route path='/careers' element={<Careers/>}/>
-      <Route path='/terms' element={<Terms/>}/>         
+      <Route path='/' element={<Home isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>
+      <Route path='/about' element={<About isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>
+      <Route path='/academics' element={<Academics isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>
+      <Route path='/admissions' element={<Admissions isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>
+      <Route path='/staff' element={<Staff isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>
+      <Route path='/students' element={<Students isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen} />}/>
+      <Route path='/parents' element={<Parents isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>
+      <Route path='/news/events' element={<NewsEvents isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>
+      <Route path='/gallery' element={<Gallery isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>
+      <Route path='/announcements' element={<Announcements isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>
+      <Route path='/LMS' element={<LMS isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen} />}/>
+      <Route path='/contact' element={<Contact isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/> 
+      <Route path='/alumni' element={<Alumni isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>
+      <Route path='/blogs' element={<Blogs isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>
+      <Route path='/careers' element={<Careers isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>
+      <Route path='/terms' element={<Terms isDrawerOpen={isDrawerOpen} setDrawerOpen={setDrawerOpen}/>}/>         
     </Routes>
    
    

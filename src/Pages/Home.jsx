@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../Components/Navbar'
 import Drawer from '../Components/Drawer'
 
@@ -6,22 +6,43 @@ import Footer from '../Components/Footer'
 import Event from '../Components/Event'
 import Achivement from '../Components/Achivement'
 import QuickLinks from '../Components/QuickLinks'
+import Signup from './Signup'
 
-const Home = () => {
+
+const Home = ({isDrawerOpen, setDrawerOpen}) => {
   
-    const [isDrawerOpen, setDrawerOpen] = useState(false)
+ 
+    const [isFormOpen, setFormOpen] = useState(false)
 
+
+    useEffect(() => {
+      
+      document.body.style.overflowY=isDrawerOpen ? 'hidden' : 'auto';
+    
+     
+    }, [isFormOpen])
+    
+
+ 
+
+    
     const toggleDrawer = () =>{
         setDrawerOpen(!isDrawerOpen)
     }
   return (
     <>
     <div className=' w-full mt-0  bg-red-300 '>
- <Navbar isDrawerOpen={isDrawerOpen} pageName={"Home"} toggleDrawer={toggleDrawer}/>
+ <Navbar isFormOpen={isFormOpen} setFormOpen={setFormOpen} isDrawerOpen={isDrawerOpen} pageName={"Home"} toggleDrawer={toggleDrawer}/>
     </div>
    
     <div className='bg-red-400 w-full h-screen  absolute'>
- <Drawer isDrawerOpen={isDrawerOpen}/>
+ <Drawer  isDrawerOpen={isDrawerOpen}/>
+
+ 
+
+
+
+
 
       {/* home design  */}
 
@@ -31,8 +52,8 @@ const Home = () => {
 
       <h2 className='text-3xl font-bold text-[#212529] font-serif mt-20 w-full text-center'>Our Mission</h2>
     
-      <div className=' flex bg-blue-50'>
-        <img className=' h-1/3 w-1/3 object-cover' src="public/banner.jpg" alt="" />
+      <div className=' flex flex-col md:flex-row items-center '>
+        <img className=' md:h-1/3 md:w-1/3 rounded-2xl object-cover' src="public/banner.jpg" alt="" />
          <p className='p-8 text-xl leading-loose xl:flex justify-center items-center  font-serif text-center  text-[#6c757d]'>The Group, powered by education and industry professionals as faculty and a balanced curriculum, aims to provide talents in various streams like business, industrial, educational, medical within and outside the nation and prepare graduates with the never ending desire to learn the principles of integrity and professionalism Group envisions itself to be the most preferred Higher Education Institution bridging academia and industry. Its programs are built on the concepts and applications in Management, IT, Medical, Education, Industrial training, Technical and other courses guided by the core values of Integrity, Ethics and Innovation.</p>
  
       </div>
@@ -47,7 +68,7 @@ const Home = () => {
     <div className='w-full bg-[#dee2e6]  p-4 h-auto md:h-auto'>
     <h1 className='text-[#212529] text-3xl font-bold font-serif w-full text-center'>Latest Announcements</h1>
     
-    <div className='w-full  overflow-x-auto place-items-center  grid grid-cols-1 md:grid-cols-10 grid-rows-2 gap-10 gap-x-80 py-3 items-center flex-col justify-around mt-10 '>
+    <div className='w-full  overflow-x-auto place-items-center md:pl-32  grid grid-cols-1 md:grid-cols-10 grid-rows-2 gap-10 gap-x-80 py-3 items-center flex-col justify-around mt-10 '>
       <Event />
        <Event />
         <Event />
@@ -91,8 +112,8 @@ const Home = () => {
            </div>
     </div>
 
-    <div className='w-full h-1/3 p-4   bg-[#adb5bd]'>
-     <h1 className='text-[#212529] text-3xl font-bold font-serif w-full text-center'>Quick Links</h1>
+    <div className='w-full h-full xl:h-[40%] md:h-[60%] p-5  bg-[#adb5bd]'>
+     
       <QuickLinks />
     </div>
 
@@ -117,12 +138,6 @@ const Home = () => {
 
 export default Home
 
-// [#f8f9fa]
-// [#e9ecef]
-// [#dee2e6]
-// [#ced4da]
-// [#adb5bd]
-// [#6c757d]
-// [#495057]
-// [#343a40]
-// [#212529]
+ 
+ 
+ 
