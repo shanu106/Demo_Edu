@@ -15,13 +15,14 @@ const Navbar = (props) => {
        <div className='flex items-center w-1/3 h-full '>
 
      
-        <button onClick={props.toggleDrawer} id='btnToggleDrawer' className=   {`${props.isDrawerOpen ? 'z-50' : 'z-50'} px-4 py-2  rounded hover:cursor-pointer`}>< i className="text-[#495057] ri-menu-line"></i></button>
+        <button onClick={props.toggleDrawer} id='btnToggleDrawer' className=   {` px-4 py-2  rounded hover:cursor-pointer`}>< i className="text-[#495057] ri-menu-line"></i></button>
         <h2 className='ml-5 font-bold text-sm md:text-2xl text-[#495057] font-serif'>little Kingdom</h2>
           </div>
           <div className=' h-full flex  justify-end gap-4 items-center w-full '>
     
             <div className={`grid z-10   ${isListOpen ? 'mt-32' : 'mt-0'}`}>
               <Link className='md:hidden text-2xl font-semibold' onClick={()=>{
+                 
                 setListOpen(!isListOpen)
               }}><i className=" ri-arrow-down-s-line "></i> More</Link>
 

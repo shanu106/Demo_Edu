@@ -36,7 +36,7 @@ const Home = ({isDrawerOpen, setDrawerOpen}) => {
     </div>
    
     <div className='bg-red-400 w-full h-screen  absolute'>
- <Drawer  isDrawerOpen={isDrawerOpen}/>
+ <Drawer  toggleDrawer={toggleDrawer}  isDrawerOpen={isDrawerOpen}/>
 
  
 
@@ -48,13 +48,13 @@ const Home = ({isDrawerOpen, setDrawerOpen}) => {
 
             {/* school mission */}
       <div className='w-full bg-[#f8f9fa] text-[#780000] h-auto flex flex-col p-5'>
-      <h1 className='text-4xl font-bold font-serif w-full text-center'>Welcome To The Website</h1>
+      <h1 className='text-4xl font-bold font-serif w-full text-center'>Welcome To The Little Kingdom</h1>
 
       <h2 className='text-3xl font-bold text-[#212529] font-serif mt-20 w-full text-center'>Our Mission</h2>
     
       <div className=' flex flex-col md:flex-row items-center '>
         <img className=' md:h-1/3 md:w-1/3 rounded-2xl object-cover' src="public/banner.jpg" alt="" />
-         <p className='p-8 text-xl leading-loose xl:flex justify-center items-center  font-serif text-center  text-[#6c757d]'>The Group, powered by education and industry professionals as faculty and a balanced curriculum, aims to provide talents in various streams like business, industrial, educational, medical within and outside the nation and prepare graduates with the never ending desire to learn the principles of integrity and professionalism Group envisions itself to be the most preferred Higher Education Institution bridging academia and industry. Its programs are built on the concepts and applications in Management, IT, Medical, Education, Industrial training, Technical and other courses guided by the core values of Integrity, Ethics and Innovation.</p>
+         <p className='p-8 text-xl leading-loose xl:flex text-justify  font-serif   text-[#6c757d]'>The Group, powered by education and industry professionals as faculty and a balanced curriculum, aims to provide talents in various streams like business, industrial, educational, medical within and outside the nation and prepare graduates with the never ending desire to learn the principles of integrity and professionalism Group envisions itself to be the most preferred Higher Education Institution bridging academia and industry. Its programs are built on the concepts and applications in Management, IT, Medical, Education, Industrial training, Technical and other courses guided by the core values of Integrity, Ethics and Innovation.</p>
  
       </div>
       
@@ -112,7 +112,7 @@ const Home = ({isDrawerOpen, setDrawerOpen}) => {
            </div>
     </div>
 
-    <div className='w-full h-full xl:h-[40%] md:h-[60%] p-5  bg-[#adb5bd]'>
+    <div className='w-full h-full xl:h-[40%] relative md:h-[60%] p-5  bg-[#adb5bd]'>
      
       <QuickLinks />
     </div>
