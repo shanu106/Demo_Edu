@@ -17,7 +17,7 @@ const Staff = ({isDrawerOpen, setDrawerOpen}) => {
     </div>
 
  <div className='bg-red-400 w-full h-screen  absolute'>
- <Drawer isDrawerOpen={isDrawerOpen}/>
+ <Drawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen}/>
        <div className='w-full bg-[#f8f9fa] text-[#fdf0d5] h-2/3 md:h-2/3 p-5'>
 
     

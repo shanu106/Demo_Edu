@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom'
 
 const QuickLinks = () => {
   return (
-    <div className='grid grid-cols-1   md:grid-cols-3 h-full text-[#343a40]  '>
+    <div className='grid grid-cols-1   md:grid-cols-3 h-auto text-[#343a40]  '>
         
-       <div className=' flex flex-col  items-start gap-2 justify-start h-auto '>
+       <div className=' flex flex-col  items-center gap-2 justify-start h-fit '>
         <h3 className='text-2xl font-bold font-serif'>Contact Information</h3>
          <p>Email : info@school.com</p>
   <p>Contact : 9999999999</p>
   <p>Office Timings : 09:00 - 4:30</p>
-  <p>Adress : 5 , jaroli trade center, indore , <br /> MP, 4231234</p>
+  <p>Adress : 5 , jaroli trade center, indore , MP, 4231234</p>
 
        </div>
-            <div className=' flex flex-col  items-start gap-1 md:gap-2 justify-start h-auto '>
+            <div className=' flex flex-col  items-center gap-1 md:gap-2 justify-start h-fit '>
           <h3 className='text-2xl font-bold font-serif'>Quick Links</h3>
             <Link to='/'>Home</Link>
             <Link to='/about'>About</Link>
@@ -23,7 +23,7 @@ const QuickLinks = () => {
             <Link to={'/privacy'}>Privacy Policy</Link>
             <Link>Terms & conditions</Link>
         </div>
-            <div className=' flex flex-col  items-start gap-2 justify-start '>
+            <div className=' flex flex-col  items-center gap-2 justify-start h-fit '>
               <h3 className='text-2xl font-bold font-serif'>Social Media</h3>
               <div className='flex gap-2'>
               <h5><i className="ri-instagram-line"></i>  <Link to={'/instagram'}> instagram</Link> </h5>
