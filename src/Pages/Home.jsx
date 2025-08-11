@@ -126,30 +126,20 @@ const events = [
   },
 ];
 
-const Home = ({ isDrawerOpen, setDrawerOpen }) => {
+const Home = () => {
   const [isFormOpen, setFormOpen] = useState(false);
 
-  useEffect(() => {
-    document.body.style.overflowY = isDrawerOpen ? "hidden" : "auto";
-  }, [isFormOpen]);
+  // useEffect(() => {
+  //   document.body.style.overflowY = isDrawerOpen ? "hidden" : "auto";
+  // }, [isFormOpen]);
 
-  const toggleDrawer = () => {
-    setDrawerOpen(!isDrawerOpen);
-  };
+
   return (
     <>
-      <div className=" w-full mt-0  bg-red-300 ">
-        <Navbar
-          isFormOpen={isFormOpen}
-          setFormOpen={setFormOpen}
-          isDrawerOpen={isDrawerOpen}
-          pageName={"Home"}
-          toggleDrawer={toggleDrawer}
-        />
-      </div>
+    
 
-      <div className="bg-red-400 w-full h-screen  absolute">
-        <Drawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen} />
+      <div className=" w-full h-full">
+      
 
         {/* home design  */}
 
@@ -218,16 +208,12 @@ const Home = ({ isDrawerOpen, setDrawerOpen }) => {
           </div>
         </div>
 
-        <div className="w-full h-full xl:h-[40%] relative md:h-[60%] p-5  bg-[#adb5bd]">
-          <QuickLinks />
-        </div>
+       
 
         {/* home page end  */}
       </div>
 
-      <div className="w-full h-1/3">
-        <Footer />
-      </div>
+   
     </>
   );
 };

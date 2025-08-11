@@ -35,23 +35,16 @@ const courses = [
   },
 ];
 
-const LMS = ({ isDrawerOpen, setDrawerOpen }) => {
-  const toggleDrawer = () => {
-    setDrawerOpen(!isDrawerOpen);
-  };
+const LMS = () => {
 
   return (
     <>
       {/* Navbar Section */}
-      <div className="w-full">
-        <Navbar pageName={"E-LMS"} toggleDrawer={toggleDrawer} />
-      </div>
-
+     
       {/* Main Content Wrapper */}
       <div className="min-h-screen bg-gray-100 pt-4 pb-10">
         {/* Drawer Sidebar */}
-        <Drawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen} />
-
+       
         {/* Dashboard Header */}
         <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
           <h1 className="text-3xl font-bold text-gray-800">My Learning Dashboard</h1>
@@ -90,19 +83,13 @@ const LMS = ({ isDrawerOpen, setDrawerOpen }) => {
           ))}
         </main>
 
-        {/* QuickLinks Section */}
+     
        
       </div>
 
-      {/* Footer */}
      
-      <div className="w-full h-full xl:h-[40%] relative md:h-[60%] p-5  bg-[#adb5bd]">
-          <QuickLinks />
-        </div>
-
-      <div className="w-full h-1/3">
-        <Footer />
-      </div>
+     
+     
     </>
   );
 };

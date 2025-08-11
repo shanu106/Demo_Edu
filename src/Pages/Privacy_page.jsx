@@ -4,19 +4,15 @@ import Footer from '../Components/Footer'
 import QuickLinks from '../Components/QuickLinks'
 import Navbar from '../Components/Navbar'
 import Drawer from '../Components/Drawer'
-const Privacy_page = ({isDrawerOpen, setDrawerOpen}) => {
+const Privacy_page = () => {
 
-   const toggleDrawer = () =>{
-        setDrawerOpen(!isDrawerOpen)
-    }
+
   return (
     <>
-     <div className=' w-full mt-0  bg-red-300 '>
- <Navbar pageName={"Privacy Policy"} toggleDrawer={toggleDrawer}/>
-    </div>
+   
 
- <div className='bg-red-400 w-full h-screen  absolute'>
- <Drawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen}/>
+ <div className=' w-full h-full '>
+
       <div className='w-full bg-[#f8f9fa] text-[#fdf0d5] h-2/3 md:h-2/3 p-5'>
 
     
@@ -27,16 +23,7 @@ const Privacy_page = ({isDrawerOpen, setDrawerOpen}) => {
 
 
 
- <div className='w-full h-full xl:h-[40%] md:h-[60%] p-5  bg-[#adb5bd]'>
-     
-      <QuickLinks />
-    </div>
 
-
-   
-</div>
-    <div className='w-full h-1/3'>
-      <Footer />
     </div>
 
     </>

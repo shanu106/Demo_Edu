@@ -5,7 +5,8 @@ import Signup from "../Pages/Signup";
 import Login from "../Pages/Login";
 
 const Navbar = (props) => {
-  const [isFormOpen, setFormOpen] = useState(false);
+  const [isLoginFormOpen, setLoginFormOpen] = useState(false);
+  const [isSignUpFormOpen, setSignUpFormOpen] = useState(false);
   const [isListOpen, setListOpen] = useState(false);
 
   return (
@@ -46,10 +47,11 @@ const Navbar = (props) => {
 
         <button
           onClick={() => {
-            setFormOpen(!isFormOpen);
+            setLoginFormOpen(!isLoginFormOpen);
+            setSignUpFormOpen(false);
           }}
           onMouseEnter={() => {
-            setFormOpen(!isFormOpen);
+            setLoginFormOpen(!isLoginFormOpen);
           }}
           className="cursor-pointer p-2 rounded-xl text-sm bg-[#495057] text-[#dee2e6] w-20 "
         >
@@ -57,8 +59,11 @@ const Navbar = (props) => {
         </button>
       </div>
 
-      <div className="fixed z-10 mt-16">
-        <Login isFormOpen={isFormOpen} />
+      <div className={`${isLoginFormOpen ? 'fixed' : 'hidden'} z-10 mt-16`}>
+        <Login isLoginFormOpen={isLoginFormOpen} isSignUpFormOpen={isSignUpFormOpen} setLoginFormOpen={setLoginFormOpen} setSignUpFormOpen={setSignUpFormOpen} />
+      </div>
+      <div className={`${isSignUpFormOpen ? 'fixed' : 'hidden'} z-10 mt-16`}>
+        <Signup isSignUpFormOpen={isSignUpFormOpen} setLoginFormOpen={setLoginFormOpen} setSignUpFormOpen={setSignUpFormOpen} />
       </div>
       {/* <div className="fixed z-10">
         <Signup isFormOpen={isFormOpen} />

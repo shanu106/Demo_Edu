@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Signup = ({isFormOpen}) => {
+const Signup = ({isSignUpFormOpen,isLoginFormOpen, setLoginFormOpen , setSignUpFormOpen}) => {
   return (
   
 
-     <div className= {`${isFormOpen ? 'fixed' : 'hidden'} md:w-1/3  right-0 md:h-auto w-3/4 pb-2 bg-[#dee2e6]    shadow-2xl shadow-black  rounded-2xl`} >
+     <div className= {`${isSignUpFormOpen ? 'fixed' : 'hidden'} md:w-1/3  right-0 md:h-auto w-3/4 pb-2 bg-[#dee2e6]    shadow-2xl shadow-black  rounded-2xl`} >
     
     
      <div className='flex flex-wrap justify-center'>
@@ -36,8 +36,22 @@ const Signup = ({isFormOpen}) => {
     
      </div>
 
-     <button className='bg-[#212529] px-4 py-2   text-[#e9ecef] rounded-lg '>Sign Up</button>
+     <button  className='bg-[#212529] px-4 py-2   text-[#e9ecef] rounded-lg '>Sign Up</button>
 
+ <div className="w-full text-center mb-4">
+          <p className="text-[#495057]">
+            Don't have an account?{" "}
+            <button
+              onClick={()=>{
+                setLoginFormOpen(!isLoginFormOpen)
+                setSignUpFormOpen(!isSignUpFormOpen)
+              }}
+              className="text-[#212529] font-semibold underline hover:cursor-pointer hover:text-[#343a40]"
+            >
+             Log In
+            </button>
+          </p>
+        </div>
 
      </div>
      </div>

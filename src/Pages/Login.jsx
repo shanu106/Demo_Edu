@@ -1,11 +1,11 @@
 import React from "react";
 import Signup from "./Signup";
 
-const Login = ({ isFormOpen, onSignUpClick }) => {
+const Login = ({ isLoginFormOpen,isSignUpFormOpen, setSignUpFormOpen, setLoginFormOpen }) => {
   return (
     <div
       className={`${
-        isFormOpen ? "fixed" : "hidden"
+        isLoginFormOpen ? "fixed" : "hidden"
       } md:w-1/3 right-0 md:h-auto w-3/4 pb-2 bg-[#dee2e6] shadow-2xl shadow-black rounded-2xl`}
     >
       <div className="flex flex-wrap justify-center">
@@ -34,7 +34,10 @@ const Login = ({ isFormOpen, onSignUpClick }) => {
           <p className="text-[#495057]">
             Don't have an account?{" "}
             <button
-              onClick={onSignUpClick}
+              onClick={()=>{
+                setSignUpFormOpen(!isSignUpFormOpen);
+                setLoginFormOpen(!isLoginFormOpen);
+              }}
               className="text-[#212529] font-semibold underline hover:text-[#343a40]"
             >
               Sign Up

@@ -4,19 +4,15 @@ import Footer from '../Components/Footer'
 import QuickLinks from '../Components/QuickLinks'
 import Navbar from '../Components/Navbar'
 import Drawer from '../Components/Drawer'
-const About = ({isDrawerOpen, setDrawerOpen}) => {
+const About = () => {
 
-   const toggleDrawer = () =>{
-        setDrawerOpen(!isDrawerOpen)
-    }
+ 
   return (
     <>
-     <div className=' w-full mt-0  '>
- <Navbar pageName={"About us"} toggleDrawer={toggleDrawer}/>
-    </div>
+  
 
- <div className=' w-full h-screen  absolute'>
- <Drawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen}/>
+ <div className=' w-full h-full  '>
+
       <div className='w-full bg-[#f8f9fa] text-[#212529] h-auto md:h-auto p-5'>
 
       <p className='p-10 text-xl font-serif text-[#780000] font-bold text-justify'>With a rich history and a legacy of producing outstanding scholars, Little Kingdom is dedicated to providing a holistic education that prepares students for the challenges of the future.</p>
@@ -37,7 +33,7 @@ const About = ({isDrawerOpen, setDrawerOpen}) => {
 <div className='w-full h-2/3 flex gap-3 md:flex-nowrap flex-wrap justify-center items-center'>
 <div className='md:w-1/3 md:h-1/4 rounded-2xl border-2 border-[#780000] p-7'>
 <h3 className='font-bold text-2xl w-full text-center font-mono text-[#212529]'>1948</h3>
-<h4 className='w-full text-center text-xs font-serif text-[#495057]'>Year of Eshtablishment</h4>
+<h4 className='w-full text-center text-xs font-serif text-[#495057]'>Year of Establishment</h4>
 </div>
 <div className='md:w-1/3 md:h-1/4 rounded-2xl border-2 border-[#780000] p-7'>
 <h3 className='font-bold text-2xl w-full text-center font-mono text-[#212529]'>2000+</h3>
@@ -68,17 +64,12 @@ const About = ({isDrawerOpen, setDrawerOpen}) => {
 
 
 
- <div className='w-full h-full xl:h-[40%] md:h-[60%] p-5  bg-[#adb5bd]'>
-     
-      <QuickLinks />
-    </div>
+
 
 
    
 </div>
-    <div className='w-full h-1/3'>
-      <Footer />
-    </div>
+  
 
     </>
   )

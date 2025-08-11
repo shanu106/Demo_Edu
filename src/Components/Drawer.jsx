@@ -34,7 +34,7 @@ const navLinks = [
   const isActive = location.pathname === link.path
 
  return (
-  <Link className={`${isActive ? 'bg-[#6c757d]' : 'bg-[#ced4da]'} w-full h-18 leading-20 text-center`} key={link.path} to={link.path}> {link.name}</Link>
+  <Link onClick={props.toggleDrawer} className={`${isActive ? 'bg-[#6c757d]' : 'bg-[#ced4da]'} w-full h-18 leading-20 text-center`} key={link.path} to={link.path}> {link.name}</Link>
  )
 })}
             <div className='w-full flex flex-col justify-center items-center border-t-2'>

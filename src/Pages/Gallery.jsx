@@ -16,22 +16,17 @@ const imageUrls = [
   "https://www.bmcshsp.com/wp-content/uploads/2021/08/BMCSS1.png",
 ];
 
-const Gallery = ({ isDrawerOpen, setDrawerOpen }) => {
-  const toggleDrawer = () => {
-    setDrawerOpen(!isDrawerOpen);
-  };
+const Gallery = () => {
+
 
   return (
     <>
-      {/* Navbar section */}
-      <div className="w-full">
-        <Navbar pageName={"Gallery"} toggleDrawer={toggleDrawer} />
-      </div>
+     
 
       {/* Main content container */}
       <div className="w-full min-h-screen bg-[#f8f9fa] p-5 pt-2">
         {/* Drawer (sidebar/menu) */}
-        <Drawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen} />
+     
 
         {/* Gallery grid */}
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
@@ -50,13 +45,8 @@ const Gallery = ({ isDrawerOpen, setDrawerOpen }) => {
         {/* QuickLinks section */}
         
       </div>
-      <div className="w-full h-full xl:h-[40%] relative md:h-[60%] p-5  bg-[#adb5bd]">
-          <QuickLinks />
-        </div>
-
-      <div className="w-full h-1/3">
-        <Footer />
-      </div>
+    
+   
     </>
   );
 };

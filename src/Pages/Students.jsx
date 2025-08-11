@@ -4,18 +4,14 @@ import Footer from '../Components/Footer'
 import QuickLinks from '../Components/QuickLinks'
 import Navbar from '../Components/Navbar'
 import Drawer from '../Components/Drawer'
-const Students = ({isDrawerOpen, setDrawerOpen}) => {
-   const toggleDrawer = () =>{
-        setDrawerOpen(!isDrawerOpen)
-    }
+const Students = () => {
+  
   return (
     <>
-     <div className=' w-full mt-0  '>
- <Navbar pageName={"Student"} toggleDrawer={toggleDrawer}/>
-    </div>
 
- <div className=' w-full h-screen  absolute'>
- <Drawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen}/>
+
+ <div className=' w-full h-full  '>
+
       <div className='w-full bg-[#f8f9fa] text-[#6c757d] h-auto md:h-auto p-5'>
 
     <div className='flex text-xl justify-end gap-3'>
@@ -158,16 +154,7 @@ const Students = ({isDrawerOpen, setDrawerOpen}) => {
 
 
 
- <div className='w-full h-full xl:h-[40%] md:h-[60%] p-5  bg-[#adb5bd]'>
-     
-      <QuickLinks />
-    </div>
 
-
-   
-</div>
-    <div className='w-full h-1/3'>
-      <Footer />
     </div>
 
     </>
