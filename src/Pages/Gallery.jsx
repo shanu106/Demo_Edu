@@ -1,47 +1,63 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import Footer from '../Components/Footer'
-import QuickLinks from '../Components/QuickLinks'
-import Navbar from '../Components/Navbar'
-import Drawer from '../Components/Drawer'
-const Gallery = ({isDrawerOpen, setDrawerOpen}) => {
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Footer from "../Components/Footer";
+import QuickLinks from "../Components/QuickLinks";
+import Navbar from "../Components/Navbar";
+import Drawer from "../Components/Drawer";
 
+const imageUrls = [
+  "https://www.bmcshsp.com/wp-content/uploads/2021/08/BMCSS1.png",
+  "https://www.bmcshsp.com/wp-content/uploads/2021/08/BMCSS1.png",
+  "https://www.bmcshsp.com/wp-content/uploads/2021/08/BMCSS1.png",
+  "https://www.bmcshsp.com/wp-content/uploads/2021/08/BMCSS1.png",
+  "https://www.bmcshsp.com/wp-content/uploads/2021/08/BMCSS1.png",
+  "https://www.bmcshsp.com/wp-content/uploads/2021/08/BMCSS1.png",
+  "https://www.bmcshsp.com/wp-content/uploads/2021/08/BMCSS1.png",
+  "https://www.bmcshsp.com/wp-content/uploads/2021/08/BMCSS1.png",
+];
 
-   const toggleDrawer = () =>{
-        setDrawerOpen(!isDrawerOpen)
-    }
+const Gallery = ({ isDrawerOpen, setDrawerOpen }) => {
+  const toggleDrawer = () => {
+    setDrawerOpen(!isDrawerOpen);
+  };
+
   return (
     <>
-     <div className=' w-full mt-0   '>
- <Navbar pageName={"Gallery"} toggleDrawer={toggleDrawer}/>
-    </div>
+      {/* Navbar section */}
+      <div className="w-full">
+        <Navbar pageName={"Gallery"} toggleDrawer={toggleDrawer} />
+      </div>
 
- <div className=' w-full h-screen  absolute'>
- <Drawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen}/>
-     <div className='w-full bg-[#f8f9fa] text-[#fdf0d5] h-2/3 md:h-2/3 p-5'>
+      {/* Main content container */}
+      <div className="w-full min-h-screen bg-[#f8f9fa] p-5 pt-2">
+        {/* Drawer (sidebar/menu) */}
+        <Drawer toggleDrawer={toggleDrawer} isDrawerOpen={isDrawerOpen} />
 
-    
-</div>
+        {/* Gallery grid */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          {imageUrls.map((img, index) => (
+            <div key={index} className="overflow-hidden rounded-lg shadow-lg">
+              <img
+                src={img}
+                alt={`Gallery Image ${index + 1}`}
+                className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-300"
+                style={{ maxWidth: "500px", maxHeight: "500px" }}
+              />
+            </div>
+          ))}
+        </div>
 
+        {/* QuickLinks section */}
+        
+      </div>
+      <div className="w-full h-full xl:h-[40%] relative md:h-[60%] p-5  bg-[#adb5bd]">
+          <QuickLinks />
+        </div>
 
-{/* design page here  */}
-
-
-
- <div className='w-full h-full xl:h-[40%] md:h-[60%] p-5  bg-[#adb5bd]'>
-     
-      <QuickLinks />
-    </div>
-
-
-   
-</div>
-    <div className='w-full h-1/3'>
-      <Footer />
-    </div>
-
+      <div className="w-full h-1/3">
+        <Footer />
+      </div>
     </>
-  )
-}
-
-export default Gallery
+  );
+};
+export default Gallery;
